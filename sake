@@ -1,0 +1,3 @@
+rsync --delete -avze ssh . `cat Sakefile`:/tmp/`basename $PWD`
+ssh -t `cat Sakefile` "cd /tmp/`basename $PWD`; make $@"
+rsync --delete -avze ssh `cat Sakefile`:/tmp/`basename $PWD`/* . 
